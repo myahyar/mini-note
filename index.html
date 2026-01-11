@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo-list/editmode</title>
+    <style type="text/css" media="all">
+      body{
+        margin: 0; 
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: lightblue;
+        box-sizing: border-box;
+      }
+      header{
+        padding-left: 10px;
+        color: grey;
+        text-shadow: 2px 2px 2px yellow;
+      }
+      div.contA{
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        width: 100%;
+      }
+      body .cont-input{
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        max-width: 800px;
+        width: 100%;
+        background-color: lightgrey;
+        border-radius: 10px;
+      }
+            body .cont-input label{
+              padding: 4px;
+              margin: 5px;
+              background: linear-gradient(to right,red,magenta,blue);
+              background-clip: text;
+              color: transparent;
+              font-family: Monospace;
+              font-weight: 800;
+              font-size: 1.5em;
+            }
+            body .cont-input input{
+              width: 200px;
+              height: 30px;
+              border: none;
+              border-radius: 5px;
+              box-shadow: 0 2px 2px grey;
+              box-sizing: border-box;
+              font-family: Sans-Serif;
+              font-size: 1em;
+              font-weight: 500;
+              color: grey;
+            }
+            body .cont-input input:focus{
+              background: linear-gradient(to right,white,grey) no-repeat;
+              background-size: 200% 100%;
+              
+            }
+              
+            body .cont-input button{
+              margin: 5px;
+              padding: 0 8px; 
+              transform: translate(0,-2px);
+              
+              border: none; 
+              border-radius: 3px;
+              font-family: Sans-Serif;
+              font-size: 1.2em;
+              box-shadow: 2px 2px white;
+            }
+            body .cont-input button:active{
+              transform: translate(2px,0px);
+              box-shadow: none;
+              
+            }
+      body .cont-list{
+        width: 100%;
+        max-width: 800px;
+        background-color: lightgrey;
+        margin: 5px;
+        padding: 2px;
+        border-radius: 5px;
+        box-shadow: 0 2px 2px grey;
+        box-sizing: border-box;
+      }
+      body .cont-list ul{
+        list-style-type: none;
+        padding: 0;
+        margin: 5px;
+      }
+      body .cont-list ul li{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        margin: 5px 0;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 2px grey;
+      }
+      body .cont-list ul li span{
+        display: flex;
+        align-items: center;
+      }
+      body .cont-list ul li span .text-note{
+        margin: 0 5px;
+      }
+        
+      body .cont-list ul li span .text-note.active{
+        text-decoration: line-through;
+      }
+      body .cont-list ul li span .status{
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        background-color: lightgrey;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      body .cont-list ul li span .status.active{
+        background-color: yellow; 
+        border: 3px solid lightgrey;
+      }
+      body .cont-list ul li span .button-edit{
+        margin-right: 3px;
+        padding: 0 3px;
+        border: 2px solid grey;
+        border-radius: 3px;
+        color: white; 
+        background-color: grey;
+      }
+      body .cont-list ul li span .button-delete{
+        padding: 1px 3px;
+        background-color: white;
+        border: none;
+        border: 2px solid grey;
+        border-radius: 3px;
+      }
+      footer.main-footer{
+        max-width: 800px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>ToDolist</h1>
+    </header>
+    <div class="contA">
+      <div class="cont-input">
+        <label for="inputText">YOUR NOTE</label>
+        <input type="text" name="inputText" id="inputText" value="" />
+        <button id="idAddNote" onclick="addNote()">Enter</button>
+      </div>
+      
+      <div class="cont-list">
+        <ul class="cont-ul" id="contUl">
+  
+        </ul>
+      </div>
+    </div>
+      
+    
+    
+<footer class="main-footer">
+    <p>&copy; 2026 My Note App by m.yahya.r - Dibuat dengan ❤️</p>
+    <div class="footer-stats">
+        Total Catatan: <span id="noteCount">0</span>
+    </div>
+</footer>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<!--     <script src="//cdn.jsdelivr.net/npm/eruda"> </script>
+    <script> eruda.init(); </script> -->
+    <script src="script.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
