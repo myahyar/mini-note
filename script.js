@@ -3,7 +3,7 @@
 const inputText = document.getElementById('inputText');
 const idAddNote = document.getElementById('idAddNote');
 const contUl = document.getElementById('contUl');
-
+idAddNote.addEventListener('click', addNote);
 const store_note = JSON.parse(localStorage.getItem("DATA-NOTE")) || [];
 
 displayList();
@@ -90,3 +90,11 @@ function btnStatus(p) {
   saveToMemory();
   displayList();
 }
+
+
+// Menambahkan event listener untuk tombol keyboard
+inputText.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    addNote();
+  }
+});
